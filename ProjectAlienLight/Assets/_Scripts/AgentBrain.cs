@@ -20,8 +20,8 @@ namespace Agent.Core
         }
 
         /// <summary>
-        /// Decides which action is most sensible based on the situation from
-        /// a list of available actions.
+        /// Loops through all available actions and returns
+        /// the highest scoring action.
         /// </summary>
         /// <param name="actionsAvailable"></param>
         public void DecideBestAction(Action[] actionsAvailable)
@@ -30,13 +30,34 @@ namespace Agent.Core
         }
 
         /// <summary>
-        /// Scores an action based on how useful it is in the current situation.
-        /// Takes different variables in consideration.
+        /// Loops through all considerations of the action, score
+        /// all the considerations, and average the consideration scores
+        /// which is equal to the action score.
         /// </summary>
         /// <param name="action"></param>
-        public void ScoreAction(Action action)
+        public float ScoreAction(Action action)
         {
+            float score = 1f;
 
+            for(int i  = 0; i < action.considerations.Length; i++)
+            {
+                float considerationScore = action.considerations[i].ScoreConsideration();
+                score *= considerationScore; // Accumulate score.
+
+                if(score == 0) // Action is redundant.
+                {
+                    action.score = 0;
+                    return action.score;
+                }
+            }
+
+            // Averaging scheme of overall score.
+            float originalScore = score;
+            float modFactor = 1 - (1 / action.considerations.Length);
+            float makeupValue = (1 - originalScore) * modFactor;
+            action.score = originalScore + (makeupValue * originalScore);
+
+            return action.score;
         }
     }
 }
