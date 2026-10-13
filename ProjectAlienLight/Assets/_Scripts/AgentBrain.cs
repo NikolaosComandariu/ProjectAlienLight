@@ -20,13 +20,25 @@ namespace Agent.Core
         }
 
         /// <summary>
-        /// Loops through all available actions and returns
-        /// the highest scoring action.
+        /// Loops through all available actions, compares scores, and
+        /// returns the highest scoring action.
         /// </summary>
         /// <param name="actionsAvailable"></param>
         public void DecideBestAction(Action[] actionsAvailable)
         {
+            float score = 0f;
+            int nextBestActionIndex = 0;
 
+            for (int i = 0; i < actionsAvailable.Length; i++)
+            {
+                if (ScoreAction(actionsAvailable[i]) > score)
+                {
+                    nextBestActionIndex = i;
+                    score = actionsAvailable[i].score;
+                }
+            }
+
+            bestAction = actionsAvailable[nextBestActionIndex];
         }
 
         /// <summary>
