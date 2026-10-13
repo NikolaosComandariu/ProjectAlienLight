@@ -830,6 +830,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1298441427}
+  - component: {fileID: 1298441430}
+  - component: {fileID: 1298441429}
+  - component: {fileID: 1298441428}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -853,6 +856,43 @@ Transform:
   - {fileID: 2061710690}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1298441428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298441426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6947bab536c6d1147b1a2925c985327d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Agent.Core.AgentBrain
+--- !u!114 &1298441429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298441426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a0258b2c85971479ea38675b79ac3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Agent.Core.MoveController
+--- !u!114 &1298441430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298441426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7df392a526386b40878c55290013017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Agent.Core.AgentController
+  actionsAvailable: []
 --- !u!1 &1772622741
 GameObject:
   m_ObjectHideFlags: 0
