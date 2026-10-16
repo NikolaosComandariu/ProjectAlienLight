@@ -6,7 +6,7 @@ namespace Agent.Core
     {
         public string Name;
         private float _score;
-        public float score
+        public float Score
         {
             get { return _score; }
             set
@@ -19,7 +19,7 @@ namespace Agent.Core
 
         public virtual void Awake()
         {
-            score = 0;
+            Score = 0;
         }
 
         public abstract void Execute();

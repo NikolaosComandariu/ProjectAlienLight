@@ -4,7 +4,7 @@ namespace Agent.Core
 {
     public class AgentBrain : MonoBehaviour
     {
-        public Action bestAction { get; private set; }
+        public Action BestAction { get; private set; }
         private AgentController agent;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -34,11 +34,11 @@ namespace Agent.Core
                 if (ScoreAction(actionsAvailable[i]) > score)
                 {
                     nextBestActionIndex = i;
-                    score = actionsAvailable[i].score;
+                    score = actionsAvailable[i].Score;
                 }
             }
 
-            bestAction = actionsAvailable[nextBestActionIndex];
+            BestAction = actionsAvailable[nextBestActionIndex];
         }
 
         /// <summary>
@@ -58,8 +58,8 @@ namespace Agent.Core
 
                 if(score == 0) // Action is redundant.
                 {
-                    action.score = 0;
-                    return action.score;
+                    action.Score = 0;
+                    return action.Score;
                 }
             }
 
@@ -67,9 +67,9 @@ namespace Agent.Core
             float originalScore = score;
             float modFactor = 1 - (1 / action.considerations.Length);
             float makeupValue = (1 - originalScore) * modFactor;
-            action.score = originalScore + (makeupValue * originalScore);
+            action.Score = originalScore + (makeupValue * originalScore);
 
-            return action.score;
+            return action.Score;
         }
     }
 }
