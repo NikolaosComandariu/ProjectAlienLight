@@ -8,7 +8,7 @@ namespace UtilityAI
     [RequireComponent(typeof(NavMeshAgent), typeof(Sensor))]
     public class Brain : MonoBehaviour
     {
-        public List<Action> actions;
+        public List<AIAction> actions;
         public Context context;
 
         void Awake()
@@ -25,7 +25,7 @@ namespace UtilityAI
         {
             UpdateContext();
 
-            Action bestAction = null;
+            AIAction bestAction = null;
             float highestUtility = float.MinValue;
 
             // Compares utility scores and saves the action with the

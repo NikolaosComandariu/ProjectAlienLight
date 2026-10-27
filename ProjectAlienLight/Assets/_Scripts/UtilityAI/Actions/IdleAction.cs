@@ -7,7 +7,7 @@ namespace UtilityAI
     /// <summary>
     /// Sets the agent's destination to their current position.
     /// </summary>
-    public class IdleAction : Action
+    public class IdleAction : AIAction
     {
         public override void Execute(Context context)
         {

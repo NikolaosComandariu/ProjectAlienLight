@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace UtilityAI
 {
-    public abstract class Action : ScriptableObject
+    public abstract class AIAction : ScriptableObject
     {
         public string targetTag;
         public Consideration consideration;
