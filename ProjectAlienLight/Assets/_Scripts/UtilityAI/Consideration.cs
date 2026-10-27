@@ -11,6 +11,6 @@ namespace UtilityAI
         /// </summary>
         /// <param name="context"></param>
         /// <returns></returns>
-        public abstract float Evaluate(ContextMenu context);
+        public abstract float Evaluate(Context context);
     }
 }
