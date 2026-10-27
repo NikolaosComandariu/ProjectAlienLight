@@ -2,6 +2,8 @@ using UnityEngine;
 
 namespace UtilityAI
 {
+    [CreateAssetMenu(menuName = "UtilityAI/Actions/IdleAction")]
+
     /// <summary>
     /// Sets the agent's destination to their current position.
     /// </summary>
