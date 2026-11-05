@@ -7,6 +7,6 @@ namespace UtilityAI
     {
         public float value;
 
-        public override float Evaluate(ContextMenu context) => value;
+        public override float Evaluate(Context context) => value;
     }
 }
