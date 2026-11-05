@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.AI;
-using UnityEngine.InputSystem;
 
 // Acts as a blackboard.
 namespace UtilityAI
@@ -23,9 +22,9 @@ namespace UtilityAI
                 return; 
             }
 
-            this.brain = brain;
-            this.agent = brain.gameObject.GetOrAdd<NavMeshAgent>();
-            this.sensor = brain.gameObject.GetOrAdd<Sensor>();  
+            this.brain = brain; 
+            this.agent = brain.gameObject.GetComponent<NavMeshAgent>();
+            this.sensor = brain.gameObject.GetComponent<Sensor>();
         }
 
         // Get and set data using the dictionary.
