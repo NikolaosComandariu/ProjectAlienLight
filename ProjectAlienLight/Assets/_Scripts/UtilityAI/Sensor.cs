@@ -38,7 +38,8 @@ namespace UtilityAI
         }
 
         /// <summary>
-        /// 
+        /// Helper process trigger since OnTrigger Enter & Exit is similar.
+        /// Checks if tag is a match for what the agent is looking for.
         /// </summary>
         /// <param name="other"></param>
         /// <param name="action"></param>
@@ -55,6 +56,13 @@ namespace UtilityAI
             }
         }
 
+        /// <summary>
+        /// If there are detected objects within the sensor, iterate
+        /// over all the known objects. Pass target tag and compare. If there is
+        /// a tag that matches, figures out distance and returns the closest target.
+        /// </summary>
+        /// <param name="tag"></param>
+        /// <returns></returns>
         public Transform GetClosestTarget(string tag)
         { 
             if(detectedObjects.Count == 0) return null;
