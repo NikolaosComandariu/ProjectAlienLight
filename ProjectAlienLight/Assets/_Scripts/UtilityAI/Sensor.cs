@@ -57,7 +57,28 @@ namespace UtilityAI
 
         public Transform GetClosestTarget(string tag)
         { 
-            return null;
+            if(detectedObjects.Count == 0) return null;
+
+            Transform closestTarget = null;
+            float closestDistanseSqr = Mathf.Infinity;
+            Vector3 currentPosition = transform.position;
+
+            foreach(Transform potentialTarget in detectedObjects)
+            {
+                if(potentialTarget.CompareTag(tag))
+                {
+                    Vector3 directionToTarget = potentialTarget.position - currentPosition;
+                    float dSqrToTarget = directionToTarget.sqrMagnitude;
+                    
+                    if(dSqrToTarget < closestDistanseSqr)
+                    {
+                        closestDistanseSqr = dSqrToTarget;
+                        closestTarget = potentialTarget;
+                    }
+                }
+            }
+
+            return closestTarget;
         }
     }
 }
