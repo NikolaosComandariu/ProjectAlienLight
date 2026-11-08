@@ -53,7 +53,7 @@ namespace UtilityAI
 
         void UpdateContext()
         {
-
+            context.SetData("health", health.GetNormalisedHealth());
         }
     }
 }
