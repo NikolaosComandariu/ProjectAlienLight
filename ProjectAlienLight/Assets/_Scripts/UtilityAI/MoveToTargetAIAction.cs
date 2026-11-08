@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace UtilityAI
 {
+    [CreateAssetMenu(menuName = "UtilityAI/Actions/MoveToTargetAction")]
     public class MoveToTargetAIAction : AIAction
     {
         public override void Initialize(Context context)
