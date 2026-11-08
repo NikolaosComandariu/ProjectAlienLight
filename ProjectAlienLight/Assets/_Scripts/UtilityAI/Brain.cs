@@ -11,9 +11,12 @@ namespace UtilityAI
         public List<AIAction> actions;
         public Context context;
 
+        private Health health;
+
         void Awake()
         {
             context = new Context(this);
+            health = GetComponent<Health>();
 
             foreach(var action in actions)
             {
