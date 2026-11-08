@@ -918,6 +918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UtilityAI.Brain
   actions:
   - {fileID: 11400000, guid: 0526846aefffbb943aafa89cdcbd1701, type: 2}
+  - {fileID: 11400000, guid: 40b2b1de421a096469438ba3c358eba4, type: 2}
 --- !u!114 &1298441429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1014,6 +1015,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3ac615c411061b419d2330b5d591b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 2
+  currentHealth: 0
 --- !u!1 &1741054249
 GameObject:
   m_ObjectHideFlags: 0
