@@ -4,11 +4,17 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private float maxHealth = 2;
     [SerializeField] private float currentHealth;
-    
+
+    private float normalisedHealth => currentHealth / maxHealth;
+
     private void Start()
     {
         currentHealth = maxHealth;
     }
+
+    public float GetCurrentHealth() { return currentHealth; }
+    public float GetNormalisedHealth() { return normalisedHealth; }
+
 
     /// <summary>
     /// Increases health, if health is not already full.
