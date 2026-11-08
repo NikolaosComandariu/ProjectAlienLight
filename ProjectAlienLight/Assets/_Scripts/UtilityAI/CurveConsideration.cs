@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace UtilityAI
 {
+    [CreateAssetMenu(menuName = "UtilityAI/Considerations/CurveConsideration")]
     public class CurveConsideration : Consideration
     {
         public AnimationCurve curve;
